@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Input from './components/input/input';
+import WeatherCard from './components/weatherCard/weatherCard';
 
 function App() {
+  const [city, setCity] = useState('');
+
+  const citySearchHandler = () => {
+    console.log(city);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Container">
+      <div className="content">
+        <h3>{city}</h3>
+        <WeatherCard />
+        <div className="input">
+          <Input placeholder='Search City?' buttonText='Search' onChange={(e) => setCity(e.target.value)} onClick={citySearchHandler} />
+        </div>
+      </div>
     </div>
   );
 }

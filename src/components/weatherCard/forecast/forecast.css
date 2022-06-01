@@ -1,0 +1,12 @@
+.forecast-cont {
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  margin: auto;
+  width: 60%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

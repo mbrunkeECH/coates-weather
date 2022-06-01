@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700&display=swap");
+
+:root {
+  --main-grey: #fbfbfb;
+  --main-text: #332821;
+  --main-purple: #5e4fc1;
+  --washed-blue: rgba(101, 142, 217, 0.1);
+  --washed-pink: rgba(216, 97, 145, 0.1);
+  --washed-purple: rgba(94, 79, 193, 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Alegreya Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: var(--main-text);
+}
+
+*:focus {
+  outline: none;
+}
+
+input[type="text"] {
+  color: var(--main-text);
+  font-family: inherit;
+  font-size: 18px;
+}
+
+input::placeholder {
+  color: var(--main-text);
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  line-height: 1.75rem;
 }

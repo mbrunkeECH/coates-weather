@@ -1,0 +1,24 @@
+.inputCont {
+  display: flex;
+  background: var(--main-grey);
+  border-radius: 20px;
+  width: 75vw;
+  padding: 1rem;
+}
+
+.search {
+  width: 75%;
+  margin-left: 1rem;
+  background: var(--main-grey);
+  border: none;
+}
+
+.btn {
+  padding: 1rem;
+  border: none;
+  background: var(--main-purple);
+  border-radius: 18px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
