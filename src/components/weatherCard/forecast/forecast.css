@@ -5,8 +5,46 @@
 .item {
   display: flex;
   margin: auto;
-  width: 60%;
+  width: 80%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-weight: 700;
+}
+
+.temp {
+  display: flex;
+  width: 30%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+}
+
+#min {
+  color: #658ed9;
+}
+
+#max {
+  color: #d86191;
+}
+
+@media only screen and (min-width: 1000px) {
+  .forecast-cont {
+    width: 60%;
+  }
+
+  .temp {
+    width: 25%;
+  }
 }

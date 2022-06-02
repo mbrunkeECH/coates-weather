@@ -1,27 +1,41 @@
 .card-container {
   background-color: var(--main-grey);
   width: 100%;
-  height: 50vh;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
 }
 
 .current {
   display: flex;
-  height: 40%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 1rem;
+  width: 100%;
+}
+
+.current-icon {
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 5rem;
+}
+
+.current-icon img {
+  width: 100%;
+  height: auto;
 }
 
 .current-city {
   font-size: 1.5rem;
-  margin: 1rem 0;
 }
 
 .current-temp {
   font-size: 4rem;
+  padding: 1rem 0;
 }
 
 .current-time {
@@ -38,17 +52,27 @@
 .stats {
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 1rem;
 }
 
 .stat {
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 1rem;
   font-weight: 700;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.stat p {
+  font-size: 0.9rem;
+}
+
+.stat img {
+  height: auto;
+  width: 1rem;
 }
 
 #humidity {
@@ -61,10 +85,25 @@
   color: #5e4fc1;
 }
 
-.forecast {
+#feels {
+  background: var(--washed-blue);
+  color: #658ed9;
+}
+
+.forecasts {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .card-container {
+    min-height: 40vh;
+  }
+
+  .stats {
+    width: 60%;
+  }
 }
