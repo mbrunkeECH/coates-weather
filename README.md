@@ -15,5 +15,13 @@ REACT_APP_WEATHER_URL=https://api.openweathermap.org/data/2.5/onecall
 
 <h3>Notes</h3>
 <h4>A note on state management:</h4><p> I could have used the the react context or something like redux toolkit but there really is no need for this app as it sits right now. It would be worth considering if more features were being planned however.</p>
-<h4>The styling within the stat componenent explained.</h4>
+
+<h4>The styling within the stat componenent explained:</h4>
 <p>At first <code>style={{ '--color': color, '--bg': bgColor }}</code> can seem a little confusing but it is a simple way to pass styling info through props and apply them as a css variable. (That and no one wants to write actual css inline)</p>
+
+<h4>How much time did I spend on this?</h4>
+<p> 3.5 hours. If I had more time I would have made the ui a little nicer with some animations and abit of a polish up. I also would have written some tests to show that the api is acting is expected. I would also do an entire accessability audit to add in aria labels etc making the app as accessible as possible.</p>
+
+<h3>What I did before I started building:</h3>
+<p>The first step of this was where I planned how I would build the components and what components can and cannot be re-used along with what would be useful for future additions to the app. This is also the stage where I would write the tests.<p>
+<p>I then mocked some designs and reviewed any technical decisions that were pending the design. This is also when I usually pause to review the architecture plans and if there are going to be any shortfalls with that given the current design.</p>
