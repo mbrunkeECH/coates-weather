@@ -14,7 +14,7 @@ REACT_APP_WEATHER_URL=https://api.openweathermap.org/data/2.5/onecall
 </ol>
 
 <h3>Notes</h3>
-<h4>A note on state management:</h4><p> I could have used the the react context or something like redux toolkit but there really is no need for this app as it sits right now. It would be worth considering if more features were being planned however.</p>
+<h4>A note on state management:</h4><p> I could have used the the react context or something like redux toolkit but there really is no need for this app as it sits right now. It would be a consideration before more features were implemented: future use is actually part of the reason I did not add it in. For example, if we were to hit another api to get some information on tide times and a bunch of stateful components adding to the current ones, something like React Context would become a burdon when compared to Redux Toolkit. </p>
 
 <h4>The styling within the stat componenent explained:</h4>
 <p>At first <code>style={{ '--color': color, '--bg': bgColor }}</code> can seem a little confusing but it is a simple way to pass styling info through props and apply them as a css variable. (That and no one wants to write actual css inline)</p>
