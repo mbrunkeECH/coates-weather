@@ -14,6 +14,6 @@ REACT_APP_WEATHER_URL=https://api.openweathermap.org/data/2.5/onecall
 </ol>
 
 <h3>Notes</h3>
-<p>A note on state management: I could have used the the react context or something like redux toolkit but there really is no need for this app as it sits right now. It would be worth considering if more features were being planned however.</p>
-<p>The styling within the stat componenent explained.</p>
+<h4>A note on state management:</h4><p> I could have used the the react context or something like redux toolkit but there really is no need for this app as it sits right now. It would be worth considering if more features were being planned however.</p>
+<h4>The styling within the stat componenent explained.</h4>
 <p>At first <code>style={{ '--color': color, '--bg': bgColor }}</code> can seem a little confusing but it is a simple way to pass styling info through props and apply them as a css variable. (That and no one wants to write actual css inline)</p>
