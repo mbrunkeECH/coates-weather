@@ -12,6 +12,10 @@
   font-weight: 700;
 }
 
+.weekday {
+  width: 25%;
+}
+
 .temp {
   display: flex;
   width: 30%;

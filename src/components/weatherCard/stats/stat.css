@@ -1,0 +1,19 @@
+.stat {
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--bg);
+  color: var(--color);
+}
+
+.stat p {
+  font-size: 0.9rem;
+}
+
+.stat img {
+  height: auto;
+  width: 1rem;
+}

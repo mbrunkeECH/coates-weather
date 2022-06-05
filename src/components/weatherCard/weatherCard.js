@@ -6,6 +6,7 @@ import './weatherCard.css';
 import Humidity from '../../assets/humidity.svg';
 import Wind from '../../assets/wind.svg';
 import Forecast from './forecast/forecast';
+import Stat from './stats/stat';
 
 const WeatherCard = ({ weather, city }) => {
   const daily = weather.daily.slice(0, 5);
@@ -15,6 +16,9 @@ const WeatherCard = ({ weather, city }) => {
   const formattedTemp = temp.toFixed(1);
   const date = new Date(current.dt * 1000);
   const dayTime = format(new Date(date), 'EEEE, h:mmaaa');
+  const windSpeed = current.wind_speed.toFixed(0);
+  const feels = current.feels_like.toFixed(0);
+  const humidity = current.humidity;
 
   return (
     <div className='card-container'>
@@ -26,22 +30,13 @@ const WeatherCard = ({ weather, city }) => {
         <h3 className='current-temp'>{formattedTemp} <span id='degrees'>{'\u00b0'} C</span></h3>
         <h5 className='current-time'>{dayTime}</h5>
         <div className="stats">
-          {/* create this as a component with {...children} */}
-          <div className="stat" id='humidity'>
-            <img src={Humidity} alt="" />
-            <p>{current.humidity}%</p>
-          </div>
-          <div className="stat" id='wind'>
-            <img src={Wind} alt="" />
-            <p> {current.wind_speed.toFixed(0)} km/h</p>
-          </div>
-          <div className="stat" id='feels'>
-            <p> Feels like: {current.feels_like.toFixed(0)}</p>
-          </div>
+          <Stat image={Wind} text={`${windSpeed}km/h`} bgColor='rgba(94, 79, 193, 0.1)' color='#5e4fc1' />
+          <Stat image={Humidity} text={`${humidity}%`} bgColor='rgba(216, 97, 145, 0.1)' color='#d86191' />
+          <Stat text={`feels like: ${feels}`} bgColor='rgba(101, 142, 217, 0.1)' color='#658ed9' />
         </div>
       </div>
       <div className='forecasts'>
-        <Forecast weatherForcecast={forecast} />
+        <Forecast weatherForecast={forecast} />
       </div>
     </div>
   );

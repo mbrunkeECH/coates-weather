@@ -8,7 +8,6 @@ import CityError from './components/error/cityError';
 import Loading from './components/loader/loader';
 
 function App() {
-  const [inputValue, setInputValue] = useState()
   const [city, setCity] = useState();
   const [loading, setLoading] = useState(false);
   const [weather, setWeather] = useState();
@@ -21,14 +20,13 @@ function App() {
   const citySearchHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setCity(inputValue)
-    console.log(city)
-    setWeather('')
+    setWeather('');
     const cityUrl = `${cityBaseUrl}?q=${city}&appid=${key}`;
 
     try {
       setError(false);
       const geo = await axios.get(cityUrl);
+      // This is gross but the api returns a 200 response even if there are no cities returned
       if (geo.data.length) {
         let lat = geo.data[0].lat;
         let lon = geo.data[0].lon;
@@ -46,14 +44,19 @@ function App() {
         setError(true);
         throw error;
       }
-    } catch (e) {
+    } catch {
       setLoading(false);
       setError(true);
     }
   };
 
+  const changeHandler = e => {
+    weather && setWeather();
+    setCity(e.target.value);
+  };
+
   return (
-    <div className="Container">
+    <div className="container">
       <div className="content">
         {loading && !weather &&
           <Loading />
@@ -65,7 +68,7 @@ function App() {
           <WeatherCard weather={weather} city={city} />
         }
         <div className="input">
-          <Input placeholder='Enter City' buttonText='Search' onChange={(e) => setInputValue(e.target.value)}  onSubmit={citySearchHandler}/>
+          <Input placeholder='Enter City' buttonText='Search' onChange={changeHandler} onSubmit={citySearchHandler} />
         </div>
 
       </div>
