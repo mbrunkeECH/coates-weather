@@ -1,11 +1,12 @@
-import { useState } from 'react';
+/* eslint-disable no-undef */
+import { useState } from "react";
 import axios from "axios";
-import './App.css';
+import "./App.css";
 
-import Input from './components/input/input';
-import WeatherCard from './components/weatherCard/weatherCard';
-import CityError from './components/error/cityError';
-import Loading from './components/loader/loader';
+import Input from "./components/input/input";
+import WeatherCard from "./components/weatherCard/weatherCard";
+import CityError from "./components/error/cityError";
+import Loading from "./components/loader/loader";
 
 function App() {
   const [city, setCity] = useState();
@@ -20,7 +21,7 @@ function App() {
   const citySearchHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setWeather('');
+    setWeather("");
     const cityUrl = `${cityBaseUrl}?q=${city}&appid=${key}`;
 
     try {
@@ -50,7 +51,7 @@ function App() {
     }
   };
 
-  const changeHandler = e => {
+  const changeHandler = (e) => {
     weather && setWeather();
     setCity(e.target.value);
   };
@@ -58,19 +59,17 @@ function App() {
   return (
     <div className="container">
       <div className="content">
-        {loading && !weather &&
-          <Loading />
-        }
-        {error &&
-          <CityError />
-        }
-        {weather && !error &&
-          <WeatherCard weather={weather} city={city} />
-        }
+        {loading && !weather && <Loading />}
+        {error && <CityError />}
+        {weather && !error && <WeatherCard weather={weather} city={city} />}
         <div className="input">
-          <Input placeholder='Enter City' buttonText='Search' onChange={changeHandler} onSubmit={citySearchHandler} />
+          <Input
+            placeholder="Enter City"
+            buttonText="Search"
+            onChange={changeHandler}
+            onSubmit={citySearchHandler}
+          />
         </div>
-
       </div>
     </div>
   );
