@@ -8,6 +8,7 @@ import CityError from './components/error/cityError';
 import Loading from './components/loader/loader';
 
 function App() {
+  const [inputValue, setInputValue] = useState()
   const [city, setCity] = useState();
   const [loading, setLoading] = useState(false);
   const [weather, setWeather] = useState();
@@ -17,9 +18,13 @@ function App() {
   const cityBaseUrl = process.env.REACT_APP_CITY_URL;
   const weatherBaseUrl = process.env.REACT_APP_WEATHER_URL;
 
-  const citySearchHandler = async () => {
-    const cityUrl = `${cityBaseUrl}?q=${city}&appid=${key}`;
+  const citySearchHandler = async (e) => {
+    e.preventDefault();
     setLoading(true);
+    setCity(inputValue)
+    console.log(city)
+    setWeather('')
+    const cityUrl = `${cityBaseUrl}?q=${city}&appid=${key}`;
 
     try {
       setError(false);
@@ -60,7 +65,7 @@ function App() {
           <WeatherCard weather={weather} city={city} />
         }
         <div className="input">
-          <Input placeholder='Search City?' buttonText='Search' onChange={(e) => setCity(e.target.value)} onClick={citySearchHandler} />
+          <Input placeholder='Enter City' buttonText='Search' onChange={(e) => setInputValue(e.target.value)}  onSubmit={citySearchHandler}/>
         </div>
 
       </div>

@@ -26,6 +26,7 @@ const WeatherCard = ({ weather, city }) => {
         <h3 className='current-temp'>{formattedTemp} <span id='degrees'>{'\u00b0'} C</span></h3>
         <h5 className='current-time'>{dayTime}</h5>
         <div className="stats">
+          {/* create this as a component with {...children} */}
           <div className="stat" id='humidity'>
             <img src={Humidity} alt="" />
             <p>{current.humidity}%</p>
