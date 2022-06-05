@@ -1,9 +1,15 @@
 .inputCont {
   display: flex;
   background: var(--main-grey);
-  border-radius: 20px;
-  width: 100%;
+  border-radius: 1.5rem;
   padding: 1rem;
+}
+
+.inputCont form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .search {
@@ -17,8 +23,8 @@
   padding: 1rem;
   border: none;
   background: var(--main-purple);
-  border-radius: 18px;
+  border-radius: 1rem;
   color: white;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.85rem;
 }
